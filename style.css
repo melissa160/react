@@ -1,0 +1,6 @@
+/*require("style-loader!raw-loader!./file.css");
+require("style-loader!css-loader!./file.css");*/
+
+.message{
+	color: red;
+}
