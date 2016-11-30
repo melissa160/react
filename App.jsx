@@ -5,7 +5,7 @@ class Comment extends React.Component{
   render(){
     return(
 	    <div>
-			<p>{this.props.head}</p>
+			<h2>{this.props.author}</h2>
 			<p>{this.props.body}</p>
 	    </div>
     );
@@ -14,12 +14,35 @@ class Comment extends React.Component{
 
 class CommentBox extends React.Component{
   render(){
+    const comments = this._getComments();
+    const commentsTitle = this._getCommentsTitle(comments.length);
     return(
-	    <div>
-			<Comment head="Anie" body="this post is about love..."/>
-			<Comment head="Carlos" body="this post is about pokemon go..."/>
+	    <div >
+        <h2>{ commentsTitle }</h2>
+			 {comments}
 	    </div>
     );
+  }
+  _getComments(){
+  	const commentList = [
+  		{id:1, author:"Melissa Ramirez", body:"Great picture!"},
+  		{id:2, author:"Cesar Pino", body:"Excellent stuff"}
+  	]
+  
+    return commentList.map((comment)=>{
+    	return (
+    			<Comment author={comment.author} body={comment.body} key={comment.id}/>
+    		);
+    });
+  };
+  _getCommentsTitle(commentCount){
+    if (commentCount === 0) {
+      return "No Comments yet";
+    } else if (commentCount === 1){
+      return "1 Comment";
+    } else {
+      return ` ${commentCount} Comments`;
+    }
   }
 }
 
