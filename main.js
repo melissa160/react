@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StoryBox from './App.jsx';
-
-ReactDOM.render(<StoryBox />, document.getElementById('app'));
+import CommentBox from './App.jsx';
+require("./style.css");
+ReactDOM.render(<CommentBox />, document.getElementById('app'));

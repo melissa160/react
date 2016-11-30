@@ -2,5 +2,5 @@
 require("style-loader!css-loader!./file.css");*/
 
 .message{
-	color: red;
+	color: blue;
 }
