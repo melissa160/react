@@ -4,7 +4,7 @@ import React from 'react';
 class Comment extends React.Component{
   render(){
     return(
-	    <div>
+	    <div className="comment" >
 			<h2>{this.props.author}</h2>
 			<p>{this.props.body}</p>
 	    </div>
