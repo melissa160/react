@@ -5,7 +5,7 @@ class Comment extends React.Component{
   render(){
     return(
 	    <div className="comment" >
-			<h2>{this.props.author}</h2>
+			<h4>{this.props.author}</h4>
 			<p>{this.props.body}</p>
 	    </div>
     );
@@ -13,13 +13,30 @@ class Comment extends React.Component{
 }
 
 class CommentBox extends React.Component{
+	constructor() {
+    super();
+
+    this.state = {
+      showComments: false
+    };
+  }
+
   render(){
     const comments = this._getComments();
+    let commentNodes;
+    let buttonText = 'Show Comments';
+
+    if (this.state.showComments){
+    	//code for displaying comments
+      buttonText = 'Hide Comments';
+    	commentNodes = <div> {comments} </div>;
+    }
     const commentsTitle = this._getCommentsTitle(comments.length);
     return(
 	    <div >
-        <h2>{ commentsTitle }</h2>
-			 {comments}
+        	<h3>{ commentsTitle }</h3>
+          <button onClick={this._handleClick.bind(this)}>{ buttonText }</button>
+			    { commentNodes }
 	    </div>
     );
   }
@@ -35,6 +52,7 @@ class CommentBox extends React.Component{
     		);
     });
   };
+
   _getCommentsTitle(commentCount){
     if (commentCount === 0) {
       return "No Comments yet";
@@ -43,6 +61,12 @@ class CommentBox extends React.Component{
     } else {
       return ` ${commentCount} Comments`;
     }
+  }
+
+  _handleClick(){
+    this.setState({
+      showComments: !this.state.showComments
+    })
   }
 }
 
