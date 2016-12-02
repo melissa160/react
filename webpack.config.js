@@ -1,9 +1,11 @@
 
 var config = {
+
    entry: './main.js',
 	
    output: {
       path:'./',
+      publicPath: '/',
       filename: 'index.js',
    },
 	
@@ -34,7 +36,12 @@ var config = {
          }
       
       ]
-   }
+   },
+
+   resolve: {
+    extensions: ['', '.js', '.jsx']
+  }
 }
+
 
 module.exports = config;
