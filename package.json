@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "webpack": "^1.13.3",
     "express": "^4.14.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
