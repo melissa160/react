@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "css-loader": "^0.26.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
