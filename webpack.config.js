@@ -1,12 +1,12 @@
 
 var config = {
 
-   entry: './main.js',
+   entry: './index.js',
 	
    output: {
       path:'./',
       publicPath: '/',
-      filename: 'index.js',
+      filename: 'bundle.js',
    },
 	
    devServer: {
